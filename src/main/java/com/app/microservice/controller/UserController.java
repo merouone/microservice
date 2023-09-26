@@ -3,9 +3,15 @@ package com.app.microservice.controller;
 import com.app.microservice.model.User;
 import com.app.microservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.Year;
 import java.util.List;
 
 @RestController
@@ -33,9 +39,19 @@ public class UserController {
      * @return
      */
     @PostMapping( path =  "/add", consumes = "application/json", produces = "application/json")
-    public User add(@RequestBody User user)
+    public ResponseEntity add(@RequestBody User user)
     {
-        return service.add(user);
+        if(!user.getResidence().equalsIgnoreCase("French")){
+            return new ResponseEntity<>(
+                    "It must be a French resident",
+                    HttpStatus.BAD_REQUEST);
+        }
+        if( Period.between( LocalDate.now(), user.getBirthday()).getYears() < 18 ){
+            return new ResponseEntity<>(
+                    "It must be an adult.",
+                    HttpStatus.BAD_REQUEST);
+        }
+        return ResponseEntity.ok(service.add(user));
     }
 
     /**
