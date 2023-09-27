@@ -8,11 +8,7 @@
  *      where each sub package is responsible for a particular functionality of the application.
  *   </p>
  *
- * @see com.app.microservice.model.User
- * @see com.app.microservice.controller;
- * @see com.app.microservice.model;
- * @see com.app.microservice.service;
+ * @author Merouane
  * @since 1.0
- * @see com.app.microservice.MainApp
  */
 package com.app.microservice;
