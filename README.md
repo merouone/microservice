@@ -6,7 +6,7 @@ Welcome, this document describes the microservice application.
 To run the program, just execute the MainApp class.
 
 # Documentation
-The javadoc can be found in the folder ./docs. It describes the different APIs explosed by this application.
+The javadoc can be found in the folder ./docs. It describes the different APIs exposed by this application.
 
 # Unit-Test
 

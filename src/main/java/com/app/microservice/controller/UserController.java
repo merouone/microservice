@@ -2,6 +2,8 @@ package com.app.microservice.controller;
 
 import com.app.microservice.model.User;
 import com.app.microservice.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,7 @@ import java.util.List;
  * User controller microservice deals with all CRUD operations regarding the @Entity users
  */
 public class UserController {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     private final UserService service;
 
     @Autowired
@@ -30,7 +33,8 @@ public class UserController {
 
     @GetMapping(path = "/")
     public String index(){
-        return "Airfrance microservice";
+        //logger.info(RequestBody.);
+        return " microservice";
     }
 
     /**
@@ -46,7 +50,8 @@ public class UserController {
                     "It must be a French resident",
                     HttpStatus.BAD_REQUEST);
         }
-        if( Period.between( LocalDate.now(), user.getBirthday()).getYears() < 18 ){
+
+        if( Period.between(user.getBirthday(), LocalDate.now()).getYears() < 18 ){
             return new ResponseEntity<>(
                     "It must be an adult.",
                     HttpStatus.BAD_REQUEST);
