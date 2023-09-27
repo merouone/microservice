@@ -1,4 +1,4 @@
-package com.app.test;
+package com.app.microservice;
 
 import com.app.microservice.model.User;
 import com.app.microservice.service.UserService;

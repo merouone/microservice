@@ -2,10 +2,10 @@
  * @package com.app.test;
  * <p> This package comprises the functional and integration tests for the @package com.app.microservice. </p>
  * It comprises two main classes
- * @see com.app.test.UserMicroserviceTests
- * @see com.app.test.UserServiceTests
+ * @see com.app.microservice.UserMicroserviceTests
+ * @see com.app.microservice.UserServiceTests
  */
-package com.app.test;
+package com.app.microservice;
 
 import com.app.microservice.model.User;
 import io.swagger.v3.core.util.Json;
@@ -15,7 +15,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -109,6 +108,7 @@ class UserMicroserviceTests {
 	@Test
 	public void updateUserAPI() throws Exception
 	{
+		addUserAPI();
 		User u = new User(1,"Biden" , LocalDate.of(1950,1,1), "USA");
 		mvc.perform( MockMvcRequestBuilders
 						.put("/api/v1/user/update", 2)
