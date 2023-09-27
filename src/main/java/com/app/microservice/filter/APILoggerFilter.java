@@ -14,6 +14,9 @@ import org.springframework.web.util.ContentCachingResponseWrapper;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+/**
+ * API Logger filter is responsible for filtering and logging the request and the response also the execution time.
+ */
 @Component
 public class APILoggerFilter extends OncePerRequestFilter {
 
