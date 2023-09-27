@@ -1,3 +1,6 @@
+/**
+ * Controller package
+ */
 package com.app.microservice.controller;
 
 import com.app.microservice.model.User;
@@ -76,8 +79,13 @@ public class UserController {
      * @return User | null
      */
     @GetMapping(path = "/get/{id}")
-    public User get(@PathVariable long id ){
-        return service.getUser(id);
+    public ResponseEntity get(@PathVariable long id){
+        User u = service.getUser(id);
+        if(u == null)
+            return new ResponseEntity<>(
+                "Sorry, this User was not found.",
+                HttpStatus.BAD_REQUEST);
+        return ResponseEntity.ok(u);
     }
 
     /**
@@ -86,12 +94,23 @@ public class UserController {
      */
     @GetMapping(path = "/users")
     public List<User> getUsers(){
+
         return service.getUsers();
     }
 
+    /**
+     * Restful API Delete action for deleting a user identified by an identifier. </p>
+     * @param id
+     * @return ResponseEntity
+     */
     @DeleteMapping(path = "/delete/{id}")
-    public boolean delete(@PathVariable long id)
+    public ResponseEntity delete(@PathVariable long id)
     {
-        return service.delete(id);
+        User u = service.getUser(id);
+        if(u == null)
+            return new ResponseEntity<>(
+                    "Sorry, this User was not found.",
+                    HttpStatus.BAD_REQUEST);
+        return ResponseEntity.ok(service.delete(id));
     }
 }

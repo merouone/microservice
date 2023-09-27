@@ -1,4 +1,4 @@
-package com.app.microservice;
+package com.app.test;
 
 import com.app.microservice.model.User;
 import com.app.microservice.service.UserService;
@@ -59,6 +59,7 @@ public class UserServiceTests {
     }
     @Test
     public void getUser(){
+
         User u = service.getUser(2);
         assert u != null;
         System.out.println("--------------------------Get User ---------------------");

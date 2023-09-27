@@ -24,7 +24,9 @@ public class UserService {
      * @return
      */
     public User getUser(long id){
-        return repository.findById(id).get();
+        if( repository.findById(id).isPresent())
+            return  repository.findById(id).get();
+        return null;
     }
 
     public User getUser(User user){

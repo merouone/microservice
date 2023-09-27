@@ -18,3 +18,12 @@ This microservice comes with a Swagger UI. Thus, it can be easily tested.
 When the application is running, the Swagger UI can be accessed via the [link](http://localhost:8080/swagger-ui/index.html).
 
 ![Swagger UI](./assets/img/Swagger-UI.png)
+
+
+# Postman testing
+
+This microservice was also tested using postman, below is an example of the tested requests.
+
+![Postman tests](./assets/img/postman-screenshot.png)
+
+
