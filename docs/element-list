@@ -1,0 +1,5 @@
+com.app.microservice
+com.app.microservice.controller
+com.app.microservice.filter
+com.app.microservice.model
+com.app.microservice.service
