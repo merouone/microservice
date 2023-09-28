@@ -1,5 +1,22 @@
 # Introduction
-Welcome, this document describes the microservice application.
+Welcome.
+This document describes a microservice application, that exposes a Restfull API.
+
+This Rest API can add users to the database.
+
+Accepted users must have a French residence. They must also be adults.
+
+The API can also perform the CRUD operations.
+
+The url of the api is the following.
+
+```shell
+
+localhost:8080/api/v1/user/
+
+```
+Additionally, this microservice has a special logging mechanism that can log details of every request and its response also the execution time.
+
 
 ## running the program
 
