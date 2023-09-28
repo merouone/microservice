@@ -75,11 +75,11 @@ class UserMicroserviceTests {
 	 */
 	@Test
 	public void getUserAPI() throws Exception {
-		addUserAPI();
+		//addUserAPI();
 		 mvc.perform(MockMvcRequestBuilders
 						.get("/api/v1/user/get/1"))
 				.andExpect(status().isOk())
-				.andExpect(MockMvcResultMatchers.jsonPath("$.name").value("someone"));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Biden"));
 
 	}
 
@@ -91,7 +91,7 @@ class UserMicroserviceTests {
 	 */
 	@Test
 	public void getUsersAPI() throws Exception {
-		addUserAPI();
+		//addUserAPI();
 		mvc.perform(MockMvcRequestBuilders
 						.get("/api/v1/user/users"))
 				.andExpect(status().isOk())
@@ -116,7 +116,7 @@ class UserMicroserviceTests {
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
-				.andExpect(MockMvcResultMatchers.jsonPath("$.name").value("User"))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Biden"))
 				.andExpect(MockMvcResultMatchers.jsonPath("$.residence").value("USA"));
 	}
 

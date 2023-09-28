@@ -53,6 +53,7 @@ public class UserServiceTests {
         User u = new User(2);
         u.setName("Me");
         u.setResidence("USA");
+        u.setBirthday(LocalDate.of(2000, 1, 1));
         assert service.update(u) != null;
 
 

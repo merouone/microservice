@@ -28,7 +28,7 @@ public class User {
     private String name;
 
     @NotNull(message = "Birthday is mandatory")
-    @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
     @NotBlank(message = "Residence is mandatory")
