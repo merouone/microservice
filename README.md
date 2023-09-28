@@ -46,9 +46,11 @@ When the application is running, the Swagger UI can be accessed via the [link](h
 # Documentation
 The javadoc can be found in the folder ./docs. It describes the different APIs exposed by this application.
 It can be rebuilt with using the following commandline.
+
+![javadocs](./assets/img/javadocs.png)
+
 ```shell
  javadoc -d "./docs" --source-path "src/main/java" -subpackages com.app.microservice
-
 ```
 # Unit-Test
 
