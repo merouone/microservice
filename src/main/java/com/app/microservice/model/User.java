@@ -14,7 +14,7 @@ import java.util.Date;
  * It is responsible for all the interactions with the database.
  */
 @Entity
-@Table(name = "airfrance_user")
+@Table(name = "app_user")
 public class User {
 
 
