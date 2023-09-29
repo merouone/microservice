@@ -18,7 +18,7 @@ public class UserServiceTests {
     private UserService service;
 
     @Test
-    public void testAddUser()  throws Exception {
+    public void testAddUser() throws Exception {
         User u = new User("Simon", LocalDate.of(2000, 1, 1), "French");
         assert service.add(u).getId() != 0;
         User u1 = new User("Merou", LocalDate.of(2000, 1, 1), "French");
@@ -29,27 +29,26 @@ public class UserServiceTests {
         //assert service.add(u2).getId() != 0;
 
 
-
     }
 
     @Test
-    public void listUsers(){
+    public void listUsers() {
         assert !service.getUsers().isEmpty();
-        for( User tmp : service.getUsers()){
+        for (User tmp : service.getUsers()) {
             System.out.println(tmp);
         }
 
     }
 
     @Test
-    public void deleteUser(){
+    public void deleteUser() {
         User u = new User(1);
         assert service.delete(u) == true;
 
     }
 
     @Test
-    public void updateUser(){
+    public void updateUser() {
         User u = new User(2);
         u.setName("Me");
         u.setResidence("USA");
@@ -58,8 +57,9 @@ public class UserServiceTests {
 
 
     }
+
     @Test
-    public void getUser(){
+    public void getUser() {
 
         User u = service.getUser(2);
         assert u != null;
@@ -69,8 +69,6 @@ public class UserServiceTests {
         Assertions.assertEquals(u.getResidence(), "USA");
 
     }
-
-
 
 
 }

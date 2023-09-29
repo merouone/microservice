@@ -14,6 +14,7 @@ import java.util.List;
 @Service
 public class UserService {
     private final UserRepository repository;
+
     @Autowired
     public UserService(UserRepository repository) {
         this.repository = repository;
@@ -21,28 +22,31 @@ public class UserService {
 
     /**
      * Get a User by a given ID
+     *
      * @return
      */
-    public User getUser(long id){
-        if( repository.findById(id).isPresent())
-            return  repository.findById(id).get();
+    public User getUser(long id) {
+        if (repository.findById(id).isPresent())
+            return repository.findById(id).get();
         return null;
     }
 
-    public User getUser(User user){
+    public User getUser(User user) {
         return getUser(user.getId());
     }
 
     /**
      * List all users
+     *
      * @return
      */
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return repository.findAll();
     }
 
     /**
      * Add a User to the Database
+     *
      * @param user
      * @return
      */
@@ -51,27 +55,28 @@ public class UserService {
     }
 
     /**
-     *  Delete user given by an Id
+     * Delete user given by an Id
+     *
      * @param user
      * @return true | false
      */
-    public boolean delete(User user){
+    public boolean delete(User user) {
         User u = getUser(user);
-        if( u != null){
+        if (u != null) {
             repository.delete(user);
             return true;
-        }else
-        {
+        } else {
             return false;
         }
     }
 
     /**
      * Delete a user given its Id
+     *
      * @param id
      * @return
      */
-    public boolean delete(long id){
+    public boolean delete(long id) {
         return delete(new User(id));
     }
 
@@ -81,9 +86,9 @@ public class UserService {
      * @param user
      * @return
      */
-    public User update(User user){
+    public User update(User user) {
         User oldUser = repository.findById(user.getId()).get();
-        if( oldUser != null){
+        if (oldUser != null) {
             oldUser.setName(user.getName());
             oldUser.setBirthday(user.getBirthday());
             oldUser.setGender(user.getGender());

@@ -12,7 +12,7 @@ The url of the api is the following.
 
 ```shell
 
-localhost:8080/api/v1/user/
+localhost:8080/api/v1/users/
 
 ```
 Additionally, this microservice has a special logging mechanism that can log details of every request and its response also the execution time.

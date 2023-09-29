@@ -24,6 +24,7 @@ public class APILoggerFilter extends OncePerRequestFilter {
 
     /**
      * Do the filtering
+     *
      * @param request
      * @param response
      * @param filterChain
@@ -42,11 +43,11 @@ public class APILoggerFilter extends OncePerRequestFilter {
 
         LOGGER.info(
                 " REQUEST :" + request.getMethod() +
-                " REQUESTURI : " + request.getRequestURI() +
-                " REQUEST PAYLOAD= " + decode(requestWrapper.getContentAsByteArray(), request.getCharacterEncoding()) +
-                " RESPONSE CODE : " + response.getStatus() +
-                " RESPONSE : " +  decode( responseWrapper.getContentAsByteArray(),  response.getCharacterEncoding()) +
-                " EXECUTION TIME : " +execTime
+                        " REQUESTURI : " + request.getRequestURI() +
+                        " REQUEST PAYLOAD= " + decode(requestWrapper.getContentAsByteArray(), request.getCharacterEncoding()) +
+                        " RESPONSE CODE : " + response.getStatus() +
+                        " RESPONSE : " + decode(responseWrapper.getContentAsByteArray(), response.getCharacterEncoding()) +
+                        " EXECUTION TIME : " + execTime
 
         );
 
@@ -56,6 +57,7 @@ public class APILoggerFilter extends OncePerRequestFilter {
 
     /**
      * Decode the array byte to a readable string
+     *
      * @param contentAsByteArray
      * @param characterEncoding
      * @return

@@ -5,9 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * User Entity model.
@@ -18,9 +16,8 @@ import java.util.Date;
 public class User {
 
 
-
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
 
@@ -46,6 +43,7 @@ public class User {
 
     /**
      * Constructor with one parameter.
+     *
      * @param id
      */
     public User(long id) {
@@ -54,6 +52,7 @@ public class User {
 
     /**
      * Constructor with 3 params
+     *
      * @param name
      * @param birthday
      * @param residence
@@ -66,6 +65,7 @@ public class User {
 
     /**
      * Constructor with 4 params
+     *
      * @param id
      * @param name
      * @param birthday
@@ -80,6 +80,7 @@ public class User {
 
     /**
      * Constructor with all params, except the id
+     *
      * @param name
      * @param birthday
      * @param residence
@@ -94,6 +95,7 @@ public class User {
 
     /**
      * Constructor with all params
+     *
      * @param name
      * @param birthday
      * @param residence
@@ -110,6 +112,7 @@ public class User {
 
     /**
      * Constructor with only the user name
+     *
      * @param name
      */
     public User(String name) {
@@ -118,6 +121,7 @@ public class User {
 
     /**
      * Get the user name
+     *
      * @return
      */
     public String getName() {
@@ -126,6 +130,7 @@ public class User {
 
     /**
      * Set the user name
+     *
      * @param name
      */
     public void setName(String name) {
@@ -134,6 +139,7 @@ public class User {
 
     /**
      * Get user birthday
+     *
      * @return
      */
     public LocalDate getBirthday() {
@@ -142,6 +148,7 @@ public class User {
 
     /**
      * Set the user birthday
+     *
      * @param birthday
      */
     public void setBirthday(LocalDate birthday) {
@@ -150,6 +157,7 @@ public class User {
 
     /**
      * get User residence
+     *
      * @return
      */
     public String getResidence() {
@@ -158,6 +166,7 @@ public class User {
 
     /**
      * Set User residence
+     *
      * @param residence
      */
     public void setResidence(String residence) {
@@ -166,6 +175,7 @@ public class User {
 
     /**
      * Get the user phone
+     *
      * @return
      */
     public String getPhone() {
@@ -174,6 +184,7 @@ public class User {
 
     /**
      * Set the user phone
+     *
      * @param phone
      */
     public void setPhone(String phone) {
@@ -182,6 +193,7 @@ public class User {
 
     /**
      * Get the user gender
+     *
      * @return
      */
     public boolean getGender() {
@@ -190,6 +202,7 @@ public class User {
 
     /**
      * Set the user gender
+     *
      * @param gender
      */
     public void setGender(boolean gender) {
@@ -198,6 +211,7 @@ public class User {
 
     /**
      * Get the user Id
+     *
      * @return
      */
     public long getId() {
@@ -206,6 +220,7 @@ public class User {
 
     /**
      * set user id
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -214,6 +229,7 @@ public class User {
 
     /**
      * Convert the object to string
+     *
      * @return
      */
     @Override
